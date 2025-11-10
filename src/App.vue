@@ -161,14 +161,14 @@ async function copyJson() {
         Vue3 JSON Viewer
       </h1>
       <div p2 flex="~ gap2">
-        <button class="control-btn" @click="expandAll">
+        <button class="text-sm p2 border border-[#e1e4e8] rounded-lg border-solid bg-white cursor-pointer" @click="expandAll">
           Expand All
         </button>
-        <button class="control-btn" @click="collapseAll">
+        <button class="text-sm p2 border border-[#e1e4e8] rounded-lg border-solid bg-white cursor-pointer" @click="collapseAll">
           Collapse All
         </button>
         <button
-          class="control-btn"
+          class="text-sm p2 border border-[#e1e4e8] rounded-lg border-solid bg-white cursor-pointer"
           :class="{
             'copy-success': copyStatus === 'success',
             'copy-error': copyStatus === 'error',
@@ -185,7 +185,7 @@ async function copyJson() {
             Copy JSON
           </template>
         </button>
-        <button class="control-btn" @click="toggleDark()">
+        <button class="text-sm p2 border border-[#e1e4e8] rounded-lg border-solid bg-white cursor-pointer" @click="toggleDark()">
           {{ isDark ? '☀️ Light' : '🌙 Dark' }}
         </button>
       </div>
@@ -194,7 +194,7 @@ async function copyJson() {
     <div flex="~ gap4" flex-1 min-h-0>
       <textarea
         v-model="jsonStr"
-        flex-1 h-full outline-none rounded-lg p2 font-mono text-sm
+        text-sm font-mono p2 outline-none rounded-lg flex-1 h-full
         border="~ solid #e1e4e8"
       />
 
@@ -207,9 +207,3 @@ async function copyJson() {
     </div>
   </div>
 </template>
-
-<style scoped>
-.control-btn{
-  @apply text-sm p2 rounded-lg cursor-pointer bg-white border border-solid border-[#e1e4e8];
-}
-</style>

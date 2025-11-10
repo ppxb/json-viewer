@@ -193,7 +193,7 @@ defineExpose({ expandAll, collapseAll })
 </script>
 
 <template>
-  <div class="json-node my-0.5 relative " :class="{ 'has-collapse-btn': showCollapseButton }">
+  <div class="json-node my-0.5 relative" :class="{ 'has-collapse-btn': showCollapseButton }">
     <template v-if="isComplex">
       <div class="node-header font-mono rounded" flex="~ items-center gap1">
         <div
@@ -219,12 +219,12 @@ defineExpose({ expandAll, collapseAll })
           <button class="json-btn-style">
             ƒ
           </button>
-          <span class="ml2 text-#999 text-[11px]">{{ countLabel }}</span>
+          <span class="text-[11px] text-#999 ml2">{{ countLabel }}</span>
         </template>
 
         <template v-if="!isExpanded">
           <template v-if="valueType === 'array'">
-            <span class="select-none cursor-pointer" @click="toggleExpand">
+            <span class="cursor-pointer select-none" @click="toggleExpand">
               <template
                 v-for="(item, index) in arrayCollapsedPreview"
                 :key="index"
@@ -241,7 +241,7 @@ defineExpose({ expandAll, collapseAll })
           </template>
 
           <template v-else-if="valueType === 'object'">
-            <span class="select-none cursor-pointer" @click="toggleExpand">
+            <span class="cursor-pointer select-none" @click="toggleExpand">
               <template v-if="objectCollapsedPreview.length === 0">
                 <span class="text-#999">empty</span>
               </template>
@@ -275,8 +275,8 @@ defineExpose({ expandAll, collapseAll })
         </template>
       </div>
 
-      <div v-if="isExpanded" class="relative font-mono">
-        <div class="absolute left-1 top-0 bottom-6 w-px bg-[linear-gradient(to_bottom,rgba(187,187,187,0.15),rgba(187,187,187,0.15))]" />
+      <div v-if="isExpanded" class="font-mono relative">
+        <div class="bg-[linear-gradient(to_bottom,rgba(187,187,187,0.15),rgba(187,187,187,0.15))] w-px bottom-6 left-1 top-0 absolute" />
         <JsonNode
           v-for="(key, index) in entryKeys"
           ref="childNodes"
@@ -320,6 +320,10 @@ defineExpose({ expandAll, collapseAll })
 
 <style scoped>
 .json-node:not(.has-collapse-btn) .node-header:hover {
-  background-color: rgba(187,187,187,.25);
+  background-color: rgba(187, 187, 187, 0.25);
+}
+
+.json-preview {
+  display: block;
 }
 </style>

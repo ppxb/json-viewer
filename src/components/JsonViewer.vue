@@ -109,13 +109,13 @@ defineExpose({
 
 <template>
   <div
-    class="text-3 p2 rounded-lg overflow-auto whitespace-nowrap bg-json-bg dark:bg-json-bg-dark"
+    class="text-3 p2 rounded-lg bg-json-bg whitespace-nowrap overflow-auto dark:bg-json-bg-dark"
     border="~ solid json-border dark:json-border-dark"
     :style="themeStyles"
   >
     <div
       v-if="parseError"
-      class="p2 font-bold rounded-md text-#f48771 bg-[rgba(215,58,73,0.1)] bg-[rgba(244,135,113,0.1)]"
+      class="text-#f48771 font-bold p2 rounded-md bg-[rgba(215,58,73,0.1)] bg-[rgba(244,135,113,0.1)]"
       flex="~ items-center gap2"
     >
       <span>⚠️ {{ parseError }}</span>
