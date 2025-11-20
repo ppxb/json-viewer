@@ -39,7 +39,7 @@ export default defineConfig({
     'json-boolean-text': 'text-json-boolean dark:text-json-boolean-dark',
     'json-null-text': 'text-json-null dark:text-json-null-dark',
     'json-bracket-text': 'text-json-bracket dark:text-json-bracket-dark select-none',
-    'json-btn-style': 'text-2.5 w-4.5 h-4.5 flex items-center justify-center rounded-md cursor-pointer text-json-btn dark:text-json-btn-dark border border-json-btn-border dark:border-json-btn-border-dark hover:bg-black/5 dark:hover:bg-white/10',
+    'json-btn-style': 'text-2 w-4.5 h-4.5 flex items-center justify-center rounded-md cursor-pointer text-json-btn dark:text-json-btn-dark border border-json-btn-border dark:border-json-btn-border-dark hover:bg-black/5 dark:hover:bg-white/10',
   },
   presets: [
     presetWind4({

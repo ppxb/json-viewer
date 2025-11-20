@@ -189,6 +189,16 @@ function collapseAll() {
   }
 }
 
+async function copyToClipboard() {
+  try {
+    const jsonString = JSON.stringify(props.value, null, 2)
+    await navigator.clipboard.writeText(jsonString)
+  }
+  catch (err) {
+    console.error('Failed to copy to clipboard:', err)
+  }
+}
+
 defineExpose({ expandAll, collapseAll })
 </script>
 
@@ -213,12 +223,8 @@ defineExpose({ expandAll, collapseAll })
         </span>
 
         <template v-if="isExpanded && itemCount > 0">
-          <button class="json-btn-style" @click="toggleExpand">
-            −
-          </button>
-          <button class="json-btn-style">
-            ƒ
-          </button>
+          <button class="json-btn-collapse json-btn-style" @click="toggleExpand" />
+          <button class="json-btn-copy json-btn-style" @click="copyToClipboard" />
           <span class="text-[11px] text-#999 ml2">{{ countLabel }}</span>
         </template>
 
@@ -323,7 +329,11 @@ defineExpose({ expandAll, collapseAll })
   background-color: rgba(187, 187, 187, 0.25);
 }
 
-.json-preview {
-  display: block;
+.json-btn-collapse::before {
+  content: '\2013';
+}
+
+.json-btn-copy::before {
+  content: '\0192';
 }
 </style>
